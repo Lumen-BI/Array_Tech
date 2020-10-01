@@ -6,7 +6,7 @@
 
     Try changing "table" to "view" below  
 */
-/* Added few comments by prashanth*/
+/* Added few comments by NiteshRanjan*/
 
 {{ config(materialized='table') }}
 
