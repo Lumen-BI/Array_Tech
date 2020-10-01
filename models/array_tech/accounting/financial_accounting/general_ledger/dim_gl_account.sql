@@ -1,16 +1,15 @@
-{{dbt_utils}}
-{{ dbt_utils.surrogate_key('KTOPL','SAKNR') }} as new_key
 {{
 config(
 materialized='incremental',
 incremental_strategy='merge',
-unique_key= 'new_key'
+unique_key='ID'
 )
 }}
 
 with dim_gl_account as
 (
 SELECT 
+ATT.KTOPL||'-'||ATT.SAKNR||'-'||LANGU as ID,
 ATT.KTOPL,
 ATT.SAKNR,
 BILKT,
