@@ -2,13 +2,14 @@
 config(
 materialized='incremental',
 incremental_strategy='merge',
-unique_key= 'KTOPL,SAKNR'
+unique_key='ID'
 )
 }}
 
 with dim_gl_account as
 (
 SELECT 
+ATT.KTOPL||'-'||ATT.SAKNR||'-'||NVL(LANGU,'')  as ID,
 ATT.KTOPL,
 ATT.SAKNR,
 BILKT,
