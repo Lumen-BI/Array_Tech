@@ -1,8 +1,10 @@
+{{dbt_utils}}
+{{ dbt_utils.surrogate_key('KTOPL','SAKNR') }} as new_key
 {{
 config(
 materialized='incremental',
 incremental_strategy='merge',
-unique_key= 'KTOPL,SAKNR'
+unique_key= 'new_key'
 )
 }}
 
