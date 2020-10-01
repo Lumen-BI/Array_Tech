@@ -6,7 +6,7 @@
 
     Try changing "table" to "view" below  
 */
-/* Added few comments by prashanth*/
+/* Added few comments by NiteshRanjan Third Try*/
 
 {{ config(materialized='table') }}
 
@@ -22,7 +22,7 @@ select *
 from source_data
 
 /*
-    Uncomment the line below to remove records with null `id` values
+    Uncomment the line below to remove records with null `id` values Nitesh Changes
 */
 
 -- where id is not null
