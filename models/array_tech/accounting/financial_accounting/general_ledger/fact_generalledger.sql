@@ -2,12 +2,13 @@
   config(
     materialized='incremental',
     incremental_strategy='merge',
-	unique_key='RCLNT,RLDNR,RBUKRS,GJAHR,BELNR,DOCLN'
+	unique_key='ID'
   )
 }}
 
 WITH FACT_GENERALLEDGER AS (
 SELECT
+    RCLNT||'-'||RLDNR||'-'||RBUKRS||'-'||GJAHR||'-'||BELNR||'-'||DOCLN as ID,
 	RTCUR,
 	RWCUR,
 	RHCUR,
