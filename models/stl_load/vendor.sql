@@ -1,5 +1,4 @@
 /* changed on Dinesh */
-/* changed on Dinesh - change 2*/
 
 /*
     Welcome to your first dbt model!
