@@ -8,7 +8,9 @@
     Try changing "table" to "view" below  
 */
 /* Added few comments by NiteshRanjan Third Try*/
-/* Added few comments by prashanth Third Try*/
+
+
+/* Added few comments by prashanth Test TEST TEST Try*/
 
 {{ config(materialized='table') }}
 
