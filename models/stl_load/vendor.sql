@@ -1,4 +1,5 @@
 /* changed on Dinesh */
+/* changed on Dinesh - change 2*/
 
 /*
     Welcome to your first dbt model!
@@ -17,8 +18,6 @@
 with source_data as (
 
     select 1 as id
-    union all
-    select null as id
 
 )
 
