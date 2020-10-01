@@ -13,6 +13,8 @@
 
 /* Added few comments by prashanth Test TEST TEST Try*/
 
+/* Added few comments by prashanth Test TEST TEST Try2222222222222222222222*/
+
 {{ config(materialized='table') }}
 
 with source_data as (
