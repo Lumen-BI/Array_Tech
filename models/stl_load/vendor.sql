@@ -1,5 +1,4 @@
 /* changed on Dinesh */
-/* changed on Dinesh - change 2*/
 
 /*
     Welcome to your first dbt model!
@@ -12,6 +11,8 @@
 
 
 /* Added few comments by prashanth Test TEST TEST Try*/
+
+/* Added few comments by prashanth Test TEST TEST Try2222222222222222222222*/
 
 {{ config(materialized='table') }}
 
