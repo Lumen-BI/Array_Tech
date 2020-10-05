@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_vendor
+    columns:
+      - name: LIFNR
+        tests:
+          - unique
+          - not_null
+  - name: dim_costcenter
+    columns:
+      - name: ID
+        tests:
+          - unique
+          - not_null
+      - name: langu
+        tests:
+          - accepted_values:
+              values: ['E']
+  - name: costcenter_0101_hier
+    tests:
+        - unique:
+            column_name: "KOKRS || '-' || KOSTL"
+        - relationships:
+            column_name: "KOKRS || '-' || KOSTL"
+            to: ref('dim_costcenter')
+            field: "KOKRS || '-' || KOSTL"
