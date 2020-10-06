@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: dim_vendor
+    description: This model is for vendor dimension
     columns:
       - name: LIFNR
         tests:
