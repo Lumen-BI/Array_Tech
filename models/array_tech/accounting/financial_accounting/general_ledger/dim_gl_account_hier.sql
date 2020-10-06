@@ -6,8 +6,10 @@ unique_key= 'NODEID'
 )
 }}
 
-with gl_account_hier as(
+with dim_gl_account_hier as(
 select 
+nvl(KTOPL,'SAP-DUMMY')||'-'||nvl(SAKNR,'SAP-DUMMY') as GL_AC_ID,
+
 NODEID ,	
 NODENAME,
 TLEVEL 	,
@@ -25,4 +27,5 @@ TXTMD   ,
 TXTLG
 from ARRAY_DB.ARRAY_DB_EDW.GL_ACCOUNT_T011_HIER
 )
-select * from gl_account_hier
+
+select * from dim_gl_account_hier

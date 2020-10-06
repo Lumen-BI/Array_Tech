@@ -2,14 +2,15 @@
 config(
 materialized='incremental',
 incremental_strategy='merge',
-unique_key='ID'
+unique_key='GL_AC_ID'
 )
 }}
 
 with dim_gl_account as
 (
 SELECT 
-ATT.KTOPL||'-'||ATT.SAKNR||'-'||NVL(LANGU,'')  as ID,
+ATT.KTOPL||'-'||ATT.SAKNR as GL_AC_ID,
+
 ATT.KTOPL,
 ATT.SAKNR,
 BILKT,
@@ -30,7 +31,8 @@ NVL(LANGU,'') LANGU,
 TXTSH,
 TXTLG
 FROM "ARRAY_DB"."ARRAY_DB_EDW".GL_ACCOUNT_ATTR ATT 
-LEFT OUTER JOIN "ARRAY_DB"."ARRAY_DB_EDW".GL_ACCOUNT_TEXT TXT ON (ATT.KTOPL=TXT.KTOPL AND ATT.SAKNR=TXT.SAKNR)
+LEFT OUTER JOIN "ARRAY_DB"."ARRAY_DB_EDW".GL_ACCOUNT_TEXT TXT 
+ON (ATT.KTOPL=TXT.KTOPL AND ATT.SAKNR=TXT.SAKNR)
 WHERE LANGU='E'
 )
 select * from dim_gl_account
