@@ -2,14 +2,14 @@
   config(
     materialized='incremental',
     incremental_strategy='merge',
-    unique_key='skey'
+    unique_key='GL_AC_ID'
   )
 }}
 
-with gl_accounthier_flat as (
+with dim_gl_account_flat as (
 SELECT 
 
- ATT.KTOPL||'-'|| ATT.SAKNR||'-'||nvl(LANGU,'') as skey,
+ATT.KTOPL||'-'|| ATT.SAKNR as GL_AC_ID,
   
 ATT.KTOPL KTOPL,
 ATT.SAKNR SAKNR,
@@ -142,4 +142,4 @@ on TL1.L2_NODEID=TL2.L2_NODEID
  WHERE LANGU='E'
   )
 
-  select * from gl_accounthier_flat
+  select * from dim_gl_account_flat

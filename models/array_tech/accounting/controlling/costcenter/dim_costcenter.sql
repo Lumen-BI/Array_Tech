@@ -2,13 +2,14 @@
   config(
     materialized='incremental',
     incremental_strategy='merge',
-	unique_key='ID'
+	unique_key='COSTCENTER_ID'
   )
 }}
 
+--	CCA.KOKRS||'-'||CCA.KOSTL||'-'||CCA.DATETO||'-'||NVL(CCT.LANGU,'') as COSTCENTER_ID,
 WITH DIM_COSTCENTER AS (
 SELECT
-	CCA.KOKRS||'-'||CCA.KOSTL||'-'||CCA.DATETO||'-'||NVL(CCT.LANGU,'') as ID,
+	CCA.KOKRS||'-'||CCA.KOSTL as COSTCENTER_ID,
 
 	CCA.KOKRS,
 	CCA.KOSTL,
