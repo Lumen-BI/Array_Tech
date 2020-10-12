@@ -7,7 +7,7 @@
 }}
 
 WITH FACT_GENERALLEDGER AS (
-SELECT
+SELECT distinct 
     RCLNT||'-'||RLDNR||'-'||RBUKRS||'-'||GJAHR||'-'||BELNR||'-'||DOCLN as FACT_GL_ID,
 
 	nvl(KOKRS,'SAP-DUMMY')||'-'||nvl(RCNTR,'SAP-DUMMY') AS COSTCENTER_ID,
